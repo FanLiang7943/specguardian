@@ -27,7 +27,7 @@ export interface BoundaryRule extends BaseRule {
   to: string[];
 }
 
-/** Files in `paths` must not be edited by agents. */
+/** Existing files in `paths` must not be edited by agents. New files may be created. */
 export interface ProtectedRule extends BaseRule {
   type: "protected";
 }

@@ -63,12 +63,13 @@ test("checkChange reports only violations introduced by the change", () => {
   assert.equal(checkChange(cfg, "src/core/payment/pay.ts", before, newViolation).length, 1);
 });
 
-test("protected files block any change", () => {
+test("protected rules block changes to existing files but allow new files", () => {
   const v = checkChange(cfg, "migrations/001_init.sql", "create table a;", "drop table a;");
   assert.deepEqual(
     v.map((x) => x.ruleId),
     ["frozen"],
   );
+  assert.deepEqual(checkChange(cfg, "migrations/002_next.sql", null, "alter table a;"), []);
 });
 
 test("parseRule rejects invalid rules with a clear message", () => {

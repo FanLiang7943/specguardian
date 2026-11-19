@@ -1,6 +1,6 @@
 {
   "name": "@liangf7943/specguardian-core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared utilities for SpecGuardian packages.",
   "license": "MIT",
   "author": "FanLiang7943",

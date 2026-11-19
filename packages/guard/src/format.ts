@@ -17,7 +17,7 @@ export function formatRule(rule: Rule): string {
       what = `files in ${rule.from.join(", ")} must not import ${rule.to.join(", ")}`;
       break;
     case "protected":
-      what = `files in ${(rule.paths ?? []).join(", ")} must not be edited`;
+      what = `existing files in ${(rule.paths ?? []).join(", ")} must not be edited (new files are allowed)`;
       break;
     case "forbid-pattern":
       what = `files in ${(rule.paths ?? ["**"]).join(", ")} must not match /${rule.pattern}/${rule.flags ?? ""}`;

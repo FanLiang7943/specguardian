@@ -64,10 +64,12 @@ export function checkContent(config: GuardConfig, file: string, content: string)
 
 /**
  * Checks a proposed change. Only violations introduced by the change are returned,
- * so existing code does not block unrelated edits.
+ * so existing code does not block unrelated edits. `protected` rules block changes to
+ * existing files; creating a new file is allowed.
  */
 export function checkChange(config: GuardConfig, file: string, before: string | null, after: string): Violation[] {
-  const protectedRules = rulesForPath(config, file).filter((r) => r.type === "protected");
+  const protectedRules =
+    before === null ? [] : rulesForPath(config, file).filter((r) => r.type === "protected");
   const out: Violation[] = protectedRules.map((rule) => ({
     ruleId: rule.id,
     type: rule.type,

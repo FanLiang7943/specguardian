@@ -1,6 +1,7 @@
 # 🛡️ SpecGuardian
 
 [![npm](https://img.shields.io/npm/v/@liangf7943/specguardian-guard)](https://www.npmjs.com/package/@liangf7943/specguardian-guard)
+[![CI](https://github.com/FanLiang7943/specguardian/actions/workflows/ci.yml/badge.svg)](https://github.com/FanLiang7943/specguardian/actions/workflows/ci.yml)
 [![license](https://img.shields.io/github/license/FanLiang7943/specguardian)](./LICENSE)
 
 **English** | [简体中文](./README.zh-CN.md)
@@ -34,7 +35,7 @@ Your specs say *"UI code must not touch the database"* or *"payment code must no
 
 ## Quick start
 
-Requires Node.js 20+.
+Requires Node.js 20+. Want to try it first? See the [demo project](./examples/demo).
 
 ```bash
 # 1. In your project root, create .specguardian/guard.yaml
@@ -103,7 +104,7 @@ Rule types:
 |---|---|---|
 | `forbid-import` | `modules`: module names or globs | A file in `paths` imports one of `modules`. `axios` also matches `axios/lib/x`, but not `axios-retry` |
 | `boundary` | `from`, `to`: path globs | A file in `from` imports a file in `to`. Resolves relative imports, `aliases` and Python dotted imports |
-| `protected` | — | An agent edits a file in `paths` (hooks only) |
+| `protected` | — | An agent changes an existing file in `paths`. Creating new files is allowed (hooks only) |
 | `forbid-pattern` | `pattern`: regex, `flags` (optional) | A file in `paths` contains text that matches `pattern` |
 
 Import detection covers JavaScript/TypeScript (`.js .jsx .ts .tsx .mjs .cjs .mts .cts .vue .svelte .astro`) and Python (`.py .pyi`). `forbid-pattern` and `protected` work on any text file.

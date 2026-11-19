@@ -1,0 +1,26 @@
+version: 1
+
+sources:
+  - specs/**/*.md
+
+aliases:
+  "@/": "src/"
+
+rules:
+  - id: no-direct-db-in-ui
+    type: boundary
+    from: ["src/ui/**"]
+    to: ["src/db/**"]
+    message: UI code must go through src/services.
+
+  - id: frozen-migrations
+    type: protected
+    paths: ["migrations/**"]
+    message: Applied migrations are immutable. Add a new migration instead.
+
+  - id: no-console-log
+    type: forbid-pattern
+    paths: ["src/**"]
+    pattern: 'console\.log\('
+    severity: warn
+    message: Use the logger in src/lib/logger.ts.

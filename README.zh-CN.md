@@ -1,6 +1,7 @@
 # 🛡️ SpecGuardian
 
 [![npm](https://img.shields.io/npm/v/@liangf7943/specguardian-guard)](https://www.npmjs.com/package/@liangf7943/specguardian-guard)
+[![CI](https://github.com/FanLiang7943/specguardian/actions/workflows/ci.yml/badge.svg)](https://github.com/FanLiang7943/specguardian/actions/workflows/ci.yml)
 [![license](https://img.shields.io/github/license/FanLiang7943/specguardian)](./LICENSE)
 
 [English](./README.md) | **简体中文**
@@ -34,7 +35,7 @@
 
 ## 快速开始
 
-需要 Node.js 20 及以上版本。
+需要 Node.js 20 及以上版本。想先体验一下？可以试试[示例项目](./examples/demo)。
 
 ```bash
 # 1. 在项目根目录生成 .specguardian/guard.yaml
@@ -103,7 +104,7 @@ message: Use src/lib/http instead.
 |---|---|---|
 | `forbid-import` | `modules`：模块名或 glob | `paths` 中的文件导入了 `modules` 中的模块。`axios` 也会匹配 `axios/lib/x`，但不会匹配 `axios-retry` |
 | `boundary` | `from`、`to`：路径 glob | `from` 中的文件导入了 `to` 中的文件。支持相对路径导入、`aliases` 别名和 Python 点号导入 |
-| `protected` | — | Agent 修改了 `paths` 中的文件（仅在 hook 中生效） |
+| `protected` | — | Agent 修改了 `paths` 中已存在的文件；新建文件不受限制（仅在 hook 中生效） |
 | `forbid-pattern` | `pattern`：正则表达式，`flags`（可选） | `paths` 中的文件包含匹配 `pattern` 的内容 |
 
 导入检测支持 JavaScript/TypeScript（`.js .jsx .ts .tsx .mjs .cjs .mts .cts .vue .svelte .astro`）和 Python（`.py .pyi`）。`forbid-pattern` 和 `protected` 适用于任何文本文件。
