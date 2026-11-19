@@ -1,5 +1,8 @@
 # 🛡️ SpecGuardian
 
+[![npm](https://img.shields.io/npm/v/@liangf7943/specguardian-guard)](https://www.npmjs.com/package/@liangf7943/specguardian-guard)
+[![license](https://img.shields.io/github/license/FanLiang7943/specguardian)](./LICENSE)
+
 [English](./README.md) | **简体中文**
 
 > AI 写代码很快，SpecGuardian 确保它依然遵守你的架构。

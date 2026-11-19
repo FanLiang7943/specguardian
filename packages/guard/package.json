@@ -1,8 +1,18 @@
 {
   "name": "@liangf7943/specguardian-guard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Drift guard for AI coding agents: enforces the hard rules in your specs at edit time via hooks and MCP.",
   "license": "MIT",
+  "author": "FanLiang7943",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FanLiang7943/specguardian.git",
+    "directory": "packages/guard"
+  },
+  "homepage": "https://github.com/FanLiang7943/specguardian#readme",
+  "bugs": {
+    "url": "https://github.com/FanLiang7943/specguardian/issues"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,7 +43,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "@liangf7943/specguardian-core": "^0.1.0",
+    "@liangf7943/specguardian-core": "^0.1.1",
     "yaml": "^2.9.1",
     "zod": "^4.6.7"
   },

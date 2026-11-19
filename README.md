@@ -1,5 +1,8 @@
 # 🛡️ SpecGuardian
 
+[![npm](https://img.shields.io/npm/v/@liangf7943/specguardian-guard)](https://www.npmjs.com/package/@liangf7943/specguardian-guard)
+[![license](https://img.shields.io/github/license/FanLiang7943/specguardian)](./LICENSE)
+
 **English** | [简体中文](./README.zh-CN.md)
 
 > AI writes code fast. SpecGuardian makes sure it still follows your architecture.
