@@ -1,0 +1,22 @@
+{
+  "name": "specguardian",
+  "private": true,
+  "description": "Guardrails that make AI coding agents respect the rules written in your specs.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/core",
+    "packages/guard"
+  ],
+  "scripts": {
+    "build": "npm run build -w @liangf7943/specguardian-core && npm run build -w @liangf7943/specguardian-guard",
+    "test": "npm run build && npm test -w @liangf7943/specguardian-core && npm test -w @liangf7943/specguardian-guard",
+    "release": "npm test && npm publish -w @liangf7943/specguardian-core && npm publish -w @liangf7943/specguardian-guard"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

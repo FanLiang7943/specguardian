@@ -1,0 +1,44 @@
+{
+  "name": "@liangf7943/specguardian-guard",
+  "version": "0.1.0",
+  "description": "Drift guard for AI coding agents: enforces the hard rules in your specs at edit time via hooks and MCP.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "specguardian-guard": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.fixture.*",
+    "skill"
+  ],
+  "keywords": [
+    "mcp",
+    "claude-code",
+    "cursor",
+    "spec-driven-development",
+    "ai-agents",
+    "architecture",
+    "guardrails"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test \"dist/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@liangf7943/specguardian-core": "^0.1.0",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
